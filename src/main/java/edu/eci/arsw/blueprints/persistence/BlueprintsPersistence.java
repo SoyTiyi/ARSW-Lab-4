@@ -5,12 +5,17 @@
  */
 package edu.eci.arsw.blueprints.persistence;
 
+import java.util.Set;
+
+import org.springframework.stereotype.Service;
+
 import edu.eci.arsw.blueprints.model.Blueprint;
 
 /**
  *
  * @author hcadavid
  */
+@Service
 public interface BlueprintsPersistence {
     
     /**
@@ -29,5 +34,8 @@ public interface BlueprintsPersistence {
      * @throws BlueprintNotFoundException if there is no such blueprint
      */
     public Blueprint getBlueprint(String author,String bprintname) throws BlueprintNotFoundException;
+
+
+    public Set<Blueprint> getBlueprintsByAuthor(String author) throws BlueprintNotFoundException;
     
 }
