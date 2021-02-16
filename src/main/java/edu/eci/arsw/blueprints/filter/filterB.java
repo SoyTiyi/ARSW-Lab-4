@@ -31,5 +31,11 @@ public class filterB implements filter {
         }
         return newSet;    
     }
+
+    @Override
+    public Blueprint filterBlueprint(Blueprint bp) {
+        // TODO Auto-generated method stub
+        return null;
+    }
     
 }

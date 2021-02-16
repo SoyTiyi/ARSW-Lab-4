@@ -5,9 +5,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import edu.eci.arsw.blueprints.model.Blueprint;
 import edu.eci.arsw.blueprints.model.Point;
 
+/* @Service */
 public class filterA implements filter {
 
     @Override
@@ -31,5 +34,16 @@ public class filterA implements filter {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public Blueprint filterBlueprint(Blueprint bp) {
+        if(comparatePoints(bp.getPoints())){
+            List<Point> newListPoint = new ArrayList<>();
+                newListPoint.add(bp.getPoints().get(0));
+                bp.setPoints(newListPoint);
+                return bp;
+        }
+        return bp;
     }
 }
