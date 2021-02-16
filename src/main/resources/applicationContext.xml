@@ -8,5 +8,6 @@
 ">
 
     <context:component-scan base-package="edu.eci.arsw.blueprints" />
-    
+    <!-- Persistencia -->
+    <bean id="inmemory" class="edu.eci.arsw.blueprints.persistence.impl.InMemoryBlueprintPersistence" />
 </beans>
